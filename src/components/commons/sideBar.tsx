@@ -23,7 +23,7 @@ const Sidebar = () => {
   console.log(tradingAccordion);
   return (
     <div
-      className={`duration-300 md:block hidden h-screen ${collapse ? 'w-max' : 'w-[300px]'} relative`}
+      className={`duration-300 md:block hidden h-screen fixed top-0 left-0 z-10 ${collapse ? 'w-max' : 'w-[300px]'} relative`}
     >
       <div className={`flex justify-center mb-5 ${collapse ? 'hidden' : ''}`}>
         <Image

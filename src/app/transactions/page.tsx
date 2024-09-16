@@ -158,6 +158,7 @@ const Transaction = () => {
   const [coin, setCoin] = useState<boolean>(true);
   const [status, setStatus] = useState<boolean>(true);
   const [invoices, setInvoices] = useState<Invoices[]>(INVOICES);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <div className='bg-slate-100 p-4'>
@@ -232,7 +233,7 @@ const Transaction = () => {
               </div>
             </div>
           </div>
-          <Dialog>
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger
               className='md:block hidden'
               asChild
@@ -249,7 +250,7 @@ const Transaction = () => {
                 <Plus className='h-6 w-6 cursor-pointer' />
               </Button>
             </DialogTrigger>
-            <TransactionModal setInvoices={setInvoices} />
+            <TransactionModal closeDialog={() => setIsDialogOpen(false)} setInvoices={setInvoices} />
           </Dialog>
         </div>
         <Table>

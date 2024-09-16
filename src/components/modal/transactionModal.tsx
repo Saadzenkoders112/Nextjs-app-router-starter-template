@@ -4,6 +4,7 @@ import { DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { transactionSchema } from '@/schema/transactionSchema';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { Invoices } from '@/types/Interfaces/Transaction Interfaces/transaction.interface';
+import { PulseLoader } from 'react-spinners';
 
 interface FormValues {
   nick_name: string;
@@ -14,9 +15,13 @@ interface FormValues {
 
 interface transactionProps {
   setInvoices: React.Dispatch<React.SetStateAction<Invoices[]>>;
+  closeDialog: () => void;
 }
 
-const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
+const TransactionModal: React.FC<transactionProps> = ({
+  setInvoices,
+  closeDialog,
+}) => {
   const initialValues: FormValues = {
     nick_name: '',
     amount: 0,
@@ -43,6 +48,7 @@ const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
         STATUS: 'Pending',
       },
     ]);
+    closeDialog();
   };
 
   const formik = useFormik({
@@ -126,7 +132,14 @@ const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
             />
           </div>
           <button className='w-full bg-blue-900 text-center rounded-lg text-white p-1'>
-            Next
+            {formik.isSubmitting ? (
+              <PulseLoader
+                color='white'
+                size={5}
+              />
+            ) : (
+              'Next'
+            )}
           </button>
         </form>
       </FormikProvider>
