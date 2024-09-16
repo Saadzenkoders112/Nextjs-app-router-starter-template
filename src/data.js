@@ -90,3 +90,32 @@ export const INVOICES = [
     STATUS: 'Cancelled',
   },
 ];
+
+export default conversation = [
+  {
+    sender: 'Alice',
+    message: 'Hey, are you coming to the meeting later today?',
+    timestamp: '2024-09-16 10:15 AM',
+  },
+  {
+    sender: 'Bob',
+    message: 'Yes, I’ll be there. What time does it start?',
+    timestamp: '2024-09-16 10:17 AM',
+  },
+  {
+    sender: 'Alice',
+    message:
+      'It’s scheduled for 3 PM. Don’t forget to bring the project report!',
+    timestamp: '2024-09-16 10:18 AM',
+  },
+  {
+    sender: 'Bob',
+    message: 'Got it! I’ll make sure to bring everything.',
+    timestamp: '2024-09-16 10:19 AM',
+  },
+  {
+    sender: 'Alice',
+    message: 'Great! See you there.',
+    timestamp: '2024-09-16 10:20 AM',
+  },
+];

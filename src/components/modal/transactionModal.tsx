@@ -52,9 +52,11 @@ const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
   });
 
   return (
-    <DialogContent className='sm:max-w-[425px] bg-white '>
+    <DialogContent className='w-4/5 rounded-lg bg-white '>
       <DialogHeader>
-        <DialogTitle>Create Transaction</DialogTitle>
+        <DialogTitle className='text-xl font-semibold'>
+          Create Transaction
+        </DialogTitle>
       </DialogHeader>
       <FormikProvider value={formik}>
         <form
@@ -74,6 +76,9 @@ const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
               placeholder='Enter nickname'
               type='text'
             />
+            {formik.errors.nick_name && (
+              <p className='text-xs text-red-500'>{formik.errors.nick_name}</p>
+            )}
           </div>
           <div className='flex flex-col gap-1'>
             <label
@@ -99,6 +104,12 @@ const TransactionModal: React.FC<transactionProps> = ({ setInvoices }) => {
                 <option value='ripple'>Ripple</option>
               </Field>
             </div>
+            {formik.errors.amount && (
+              <p className='text-xs text-red-500'>{formik.errors.amount}</p>
+            )}
+            {formik.errors.coin && (
+              <p className='text-xs text-red-500'>{formik.errors.coin}</p>
+            )}
           </div>
           <div className='flex flex-col gap-1'>
             <label

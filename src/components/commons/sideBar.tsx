@@ -23,7 +23,7 @@ const Sidebar = () => {
   console.log(tradingAccordion);
   return (
     <div
-      className={`duration-300  sm:block hidden h-screen ${collapse ? 'w-max' : 'w-[300px]'}  border-r border-r-slate-300 relative`}
+      className={`duration-300 md:block hidden h-screen ${collapse ? 'w-max' : 'w-[300px]'}  border-r border-r-slate-300 relative`}
     >
       <div className={`flex justify-center mb-5 ${collapse ? 'hidden' : ''}`}>
         <Image
@@ -73,7 +73,7 @@ const Sidebar = () => {
             </div>
             <ChevronLeft
               onClick={() => setAccordion(!tradingAccordion)}
-              className={`h-4 w-4 duration-200 z-10 ${tradingAccordion ? 'rotate-90' : '-rotate-90'}`}
+              className={`h-4 w-4 duration-200 ${collapse ? "hidden": ""} z-10 ${tradingAccordion ? 'rotate-90' : '-rotate-90'}`}
             />
           </div>
         </li>
