@@ -19,8 +19,6 @@ const Sidebar = () => {
   const [active, setActive] = useState('/');
   const [collapse, setCollapse] = useState(false);
   const [tradingAccordion, setAccordion] = useState(false);
-
-  console.log(tradingAccordion);
   return (
     <div
       className={`duration-300 md:block hidden h-screen fixed top-0 left-0 z-10 ${collapse ? 'w-max' : 'w-[300px]'} relative`}
