@@ -21,7 +21,7 @@ const MenuBar = () => {
   const [active, setActive] = useState('dashboard');
   const [tradingAccordion, setAccordion] = useState(false);
   return (
-    <SheetContent className='bg-white w-max'>
+    <SheetContent className='bg-white w-max sm:hidden'>
       <div className={`flex justify-center mb-5`}>
         <Image
           src='/assets/images/logo.png'
